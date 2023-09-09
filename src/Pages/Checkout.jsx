@@ -14,7 +14,7 @@ const Checkout = (props) => {
   };
 
   const handleCheckbox2Change = () => {
-    setCheckbox1Checked(false);
+    setCheckbox1Checked(false); 
     setCheckbox2Checked(!checkbox2Checked);
   };
 
@@ -48,7 +48,14 @@ const Checkout = (props) => {
     window.open("/store1", "_self");
   };
 
+
+
+
   const { cartItems, totalItems, overallTotalPrice } = props.location.state;
+
+
+
+
 
   return (
     <div>

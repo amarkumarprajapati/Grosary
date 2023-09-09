@@ -7,8 +7,6 @@ import { Link } from "react-router-dom";
 const Home = () => {
   const [show, setshow] = useState(false);
 
-
-
   // hide and show
   const [buttonText, setButtonText] = useState("See All");
 
@@ -23,31 +21,32 @@ const Home = () => {
     }
   };
 
-
-
   // serach
   const [searchValue, setSearchValue] = useState("");
   const handleSearch = () => {};
 
+  // Login page
 
+  const Loginpage = () => {
+    window.open("/login", "_self");
+  };
 
   return (
     <div>
       <div className="image15">
-
         {/* headnav */}
 
         <div className="conatiner2">
-            <div className="conatiner21">
-               <h1>ontheshelf</h1>
-            </div>
-            <div className="homebytt">
-               <button className="homebutt">US</button>
-               <button className="homebutt1">Create an account</button>
-            </div>
-            
+          <div className="conatiner21">
+            <h1>ontheshelf</h1>
+          </div>
+          <div className="homebytt">
+            <button className="homebutt">US</button>
+            <button className="homebutt1" onClick={Loginpage}>
+              Create an account
+            </button>
+          </div>
         </div>
-
 
         {/* home */}
         <div className="h1tag1">
@@ -94,10 +93,6 @@ const Home = () => {
           <p>Track your oder in real time</p>
         </div>
       </div>
-
-
-
-
 
       {/* next section */}
       <div className="container25">
@@ -184,14 +179,10 @@ const Home = () => {
           <h1>How it Works?</h1>
         </div>
         <div className="flex12">
-          <div className="image1">
-          </div>
-          <div className="image2">
-          </div>
-          <div className="image3">
-          </div>
-          <div className="image4">
-          </div>
+          <div className="image1"></div>
+          <div className="image2"></div>
+          <div className="image3"></div>
+          <div className="image4"></div>
         </div>
       </div>
       <div className="flex123">
@@ -208,7 +199,7 @@ const Home = () => {
       </div>
 
       {/* last section */}
-      <br/>
+      <br />
       <Download />
       <Footer />
     </div>

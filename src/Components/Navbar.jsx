@@ -2,12 +2,11 @@ import React, { useState } from "react";
 import Cart from "../Storeinfo/Cart";
 
 const Navbar = () => {
-  
-
-  
-
-
-
+  // dropdown
+  const [dropshow, setDropshow] = useState(false);
+  const dropshownew = () => {
+    setDropshow(!dropshow);
+  };
 
   const openset = () => {
     window.open("/", "_self");
@@ -35,11 +34,13 @@ const Navbar = () => {
           alt="img"
           onClick={opencart}
           className="image185"></img>
-
-
-
         <img src="12455.png" alt="img" className="image"></img>
-        <img src="" alt="img" className="image"></img>
+        <select name="user" id="">
+          <option value="">Profile</option>
+          <option value="">Setting</option>
+          <option value="">About</option>
+          <option value="">Contact US</option>
+        </select>
       </div>
     </div>
   );

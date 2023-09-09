@@ -56,8 +56,6 @@
 }
 
 .image185{
-    width: 60px;
-    height: 60px;
     margin-top: 20px;
     cursor: pointer;
 }
@@ -631,6 +629,7 @@ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: orange;
 }
 .imagebox2{
+    cursor: pointer;
     width: 75%;
     padding-left: 50px;
 }
@@ -647,17 +646,22 @@ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 .imagebox6{
     width: 300px;
     margin: auto; 
+    cursor: pointer;
 }
 .imagebox8{
+    cursor: pointer;
     width: 70%;
 }
 .imagebox9{
+    cursor: pointer;
     width: 70%;
 }
 .imagebox10{
+    cursor: pointer;
     width: 70%;
 }
 .imagebox11{
+    cursor: pointer;
     width: 75%;
 }
 
@@ -880,8 +884,7 @@ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent black */
-    backdrop-filter: blur(3px); /* Apply a blur effect */
+    background-color: rgba(0, 0, 0, 0.4); 
     z-index: 900;
   }
   

@@ -7,6 +7,7 @@ import Storeavl from './Pages/Storeavl'
 import Store1 from './Storeinfo/Store1'
 import Cart from './Storeinfo/Cart'
 import Checkout from './Pages/Checkout'
+import Login from './Pages/Login'
 
 
 const Global = () => {
@@ -21,6 +22,7 @@ const Global = () => {
           <Route path='/store1' element={<Store1  />} />
           <Route path='/cart' element={<Cart />} />
           <Route path='/checkout' element={<Checkout />} />
+          <Route path='/login' element={<Login />}/>
         </Routes>
       </Main>
     </div>
