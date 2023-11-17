@@ -3,8 +3,10 @@ import { useState } from "react";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import Download from "../Components/Download";
+import { useLocation } from "react-router-dom";
+import Cart from "../Storeinfo/Cart";
 
-const Checkout = (props) => {
+const Checkout = () => {
   const [checkbox1Checked, setCheckbox1Checked] = useState(false);
   const [checkbox2Checked, setCheckbox2Checked] = useState(false);
 
@@ -14,7 +16,7 @@ const Checkout = (props) => {
   };
 
   const handleCheckbox2Change = () => {
-    setCheckbox1Checked(false); 
+    setCheckbox1Checked(false);
     setCheckbox2Checked(!checkbox2Checked);
   };
 
@@ -48,18 +50,16 @@ const Checkout = (props) => {
     window.open("/store1", "_self");
   };
 
+  // map items
 
-
-
-  const { cartItems, totalItems, overallTotalPrice } = props.location.state;
-
-
-
-
+  const location = useLocation();
+  const cartItems = location.state ? location.state.cartItems : [];
 
   return (
     <div>
-      <Navbar />
+      <div>
+        <Navbar />
+      </div>
       <div className="show_flex">
         <div className="nicwe">
           <form className="goback">
@@ -177,14 +177,28 @@ const Checkout = (props) => {
           <br />
           <button className="buttonceckout">Checkout</button>
         </div>
-
-        <div className="baclgroundcoclor">
-          <h1>My Basket - </h1>
-        </div>
+        {cartItems.map((item, index) => (
+          <div
+            className="backgroundColor"
+            style={{
+              height: "60vh",
+              width: "31.6%",
+              borderRadius: "10px",
+              marginTop: "60px",
+              fontFamily: "sans-serif",
+            }}
+            key={index}
+            >
+            <h1>My Basket - </h1>
+            <p>Items in cart - {item.price} </p>
+            <p>Total Price - {item.quantity} </p>
+          </div>
+        ))}
       </div>
-
-      <Download />
+      <br />
+      <div>
       <Footer />
+      </div>
     </div>
   );
 };

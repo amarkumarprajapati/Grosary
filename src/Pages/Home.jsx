@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Footer from "../Components/Footer";
 import Download from "../Components/Download";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Home = () => {
   const [show, setshow] = useState(false);
@@ -14,22 +14,30 @@ const Home = () => {
     setshow(!show);
 
     if (buttonText === "See All") {
-      setButtonText("All");
+      setButtonText("Hide");
     } else {
       buttonText === "All";
-      setButtonText("See All");
+      setButtonText("See");
     }
   };
 
   // serach
   const [searchValue, setSearchValue] = useState("");
-  const handleSearch = () => {};
+  const handleSearch = () => {
+    if (searchValue === "") {
+      alert("plses");
+    }else{
+      window.open('/storeavl','_self')
+    }
+  };
 
   // Login page
 
   const Loginpage = () => {
     window.open("/login", "_self");
   };
+
+  const navigate = useNavigate("/additems");
 
   return (
     <div>
@@ -58,12 +66,10 @@ const Home = () => {
               type="text"
               className="searchbutt"
             />
-            <button className="buttonsearch1">
-              <Link
-                to={`/storeavl?search=${encodeURIComponent(searchValue)}`}
-                className="sarch">
-                Search
-              </Link>
+            <button onClick={handleSearch} className="buttonsearch1">
+              
+                Proceed
+              
             </button>
           </div>
         </div>
@@ -100,7 +106,10 @@ const Home = () => {
         <button onClick={haldleshow}>{buttonText}</button>
       </div>
       <div className="divbox1">
-        <motion.div whileHover={{ scale: 1.1 }} className="divbox">
+        <motion.div
+          onClick={navigate}
+          whileHover={{ scale: 1.1 }}
+          className="divbox">
           <button>Details</button>
           <img src="1.png" alt="image" className="pic" />
           <h4>Twisted Shrimp</h4>

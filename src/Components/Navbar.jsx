@@ -12,10 +12,17 @@ const Navbar = () => {
     window.open("/", "_self");
   };
 
-  const [showdiv, setShowdiv] = useState("false");
+  const [showdiv, setShowdiv] = useState(false);
 
   const opencart = () => {
     setShowdiv(!showdiv);
+  };
+
+  // call cart item
+  const [cartAll, setCartAll] = useState(false);
+
+  const toggleshow = () => {
+    setCartAll(!cartAll);
   };
 
   return (
@@ -32,8 +39,9 @@ const Navbar = () => {
         <img
           src="123.png"
           alt="img"
-          onClick={opencart}
+          onClick={toggleshow}
           className="image185"></img>
+        {cartAll && <Cart />}
         <img src="12455.png" alt="img" className="image"></img>
         <select name="user" id="">
           <option value="">Profile</option>

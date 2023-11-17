@@ -4,9 +4,9 @@ import Download from "../Components/Download";
 import Footer from "../Components/Footer";
 import { motion } from "framer-motion";
 import Cart from "./Cart";
-import { Link } from "react-router-dom";
+import Storedetails2 from "./Storedetails2 ";
 
-const Store1 = () => {
+const Store2 = () => {
   // goback
   const goback = () => {
     window.open("/storeavl", "_self");
@@ -25,7 +25,9 @@ const Store1 = () => {
   ]);
 
   // increatment
+
   const [vegetableQuantities, setVegetableQuantities] = useState({});
+
   const handleIncrement = (id) => {
     setVegetableQuantities((prevQuantities) => ({
       ...prevQuantities,
@@ -52,7 +54,9 @@ const Store1 = () => {
 
   // totaal
   const [vegetableData, setVegetableData] = useState(vegetables);
+
   const [total, setTotal] = useState(0);
+
   useEffect(() => {
     const newTotal = vegetableData.reduce(
       (acc, vegetable) => acc + vegetable.countptag,
@@ -63,7 +67,7 @@ const Store1 = () => {
 
   const [hide, setHide] = useState(true);
   const showallfood = () => {
-    setHide(!hide);
+    setHide(!hide); // Changed 'show' to 'hide'
   };
 
   const [popup, setPopup] = useState(false);
@@ -83,25 +87,23 @@ const Store1 = () => {
     );
 
     if (existingItemIndex !== -1) {
+      // If the item already exists, increment its quantity
       updatedCartItems[existingItemIndex].quantity += 1;
     } else {
+      // If the item is not in the cart, add it with a quantity of 1
       updatedCartItems.push({ ...item, quantity: 1 });
     }
 
     setCartItems(updatedCartItems);
   };
 
-  // remove
+  // Function to remove an item from the cart based on its ID
   const removeFromCart = (itemId) => {
     const updatedCart = cartItems.filter((item) => item.id !== itemId);
     setCartItems(updatedCart);
   };
 
   //
-
-  var opencart = () => {
-    setShowdiv(!showdiv);
-  };
 
   const openset = () => {
     window.open("/", "_self");
@@ -113,9 +115,14 @@ const Store1 = () => {
 
   const [showdiv, setShowdiv] = useState(false);
 
+  const opencart = () => {
+    setShowdiv(!showdiv);
+  };
+
   return (
     <div>
       {/* navbar */}
+
       <div className="container">
         <div className="textalig">
           <h1 className="h1tag" onClick={openset}>
@@ -127,8 +134,8 @@ const Store1 = () => {
         </div>
 
         {showdiv && (
-          <div className="hidediv" style={{ borderRadius: "10px" }}>
-            <Cart cartItems={cartItems} />
+          <div className="hidediv">
+            <Cart cartItems={cartItems} removeFromCart={removeFromCart} />
           </div>
         )}
 
@@ -137,10 +144,10 @@ const Store1 = () => {
           alt="img"
           onClick={opencart}
           className="image185"></img>
+        <img src="12455.png" alt="img" className="image"></img>
         <img src="" alt="img" className="image"></img>
       </div>
 
-      {/* Store-1 */}
       <div className="conatiner585">
         <div className="text125">
           <motion.span>
@@ -152,8 +159,8 @@ const Store1 = () => {
             />
             Back to all store
           </motion.span>
-          <h1>Twisted shimp</h1>
-          <p>Min 50rs . 0.50 . 20-30min.</p>
+          <h1>Dragon Foods</h1>
+          <p>Min 50rs . 0.50  Delivery time - 20-30min.</p>
         </div>
         <div>
           <img src="153.jpg" alt="" className="image152" />
@@ -208,6 +215,7 @@ const Store1 = () => {
 
       <div className="size11">
         {/* 1 */}
+
         {hide &&
           vegetables
             .filter((vegetable) => vegetable.id === 1)
@@ -215,14 +223,14 @@ const Store1 = () => {
               <div className="display" key={vegetable.id}>
                 <img src="sgrdhfjg.png" alt="image" className="vegetable" />
                 <p>
-                  {vegetable.name} - (per - {vegetable.price})
+                  {Storedetails2.name} - (per - {Storedetails2.price})
                 </p>
                 <p className="empliment">
                   Quantity - ({vegetableQuantities[vegetable.id]})
                 </p>
                 <p>
                   Total Price -{" "}
-                  {vegetable.price * vegetableQuantities[vegetable.id]}
+                  {Storedetails2.price * vegetableQuantities[vegetable.id]}
                 </p>
                 <div className="flexnu">
                   <p
@@ -254,7 +262,7 @@ const Store1 = () => {
               <div className="display" key={vegetable.id}>
                 <img src="tomato.png" alt="image" className="vegetable" />
                 <p>
-                  {vegetable.name} - (per - {vegetable.price})
+                  {Storedetails2.name} - (per - {Storedetails2.price})
                 </p>
                 <p className="empliment">
                   Quantity - ({vegetableQuantities[vegetable.id]})
@@ -293,7 +301,7 @@ const Store1 = () => {
               <div className="display" key={vegetable.id}>
                 <img src="carrot.png" alt="image" className="vegetable" />
                 <p>
-                  {vegetable.name} - (per - {vegetable.price})
+                  {Storedetails2.name2} - (per - {vegetable.price})
                 </p>
                 <p className="empliment">
                   Quantity - ({vegetableQuantities[vegetable.id]})
@@ -449,4 +457,4 @@ const Store1 = () => {
   );
 };
 
-export default Store1;
+export default Store2;

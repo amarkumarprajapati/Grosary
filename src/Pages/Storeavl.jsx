@@ -5,14 +5,14 @@ import Footer from "../Components/Footer";
 import { motion } from "framer-motion";
 
 const Storeavl = () => {
-  const searchParams = new URLSearchParams(location.search);
-  const searchValue = searchParams.get("search");
-
   const openstore = () => {
     window.open("/store1", "_self");
   };
+  const openstore2 = () => {
+    window.open("/store2", "_self");
+  };
 
-  const [showall, setShowall] = useState(null);
+  const [showall, setShowall] = useState(false);
 
   const handleclickall = () => {
     setShowall(!showall);
@@ -20,9 +20,11 @@ const Storeavl = () => {
 
   return (
     <div>
-      <Navbar />
+      <div style={{ marginTop: "-10px" }}>
+        <Navbar />
+      </div>
       <div className="searchbarre">
-        <h1>Available stores in: {searchValue}</h1>
+        <h1>Available stores in: Your Area</h1>
         <label className="showlevel">
           Sort by:
           <select className="dropdown">
@@ -39,10 +41,10 @@ const Storeavl = () => {
             {/* 1 */}
 
             <motion.img
-              onClick={openstore}
               whileHover={{ scale: 1.1 }}
+              onClick={openstore}
               src="grocery_store_logo_4x.png"
-              alt=""
+              alt="image"
               className="imagebox3"
             />
             <motion.h1 onClick={openstore}>Twisted shrimp</motion.h1>
@@ -64,9 +66,10 @@ const Storeavl = () => {
           </div>
           <div className="box123">
             <motion.img
+              onClick={openstore2}
               whileHover={{ scale: 1.1 }}
               src="5315.png"
-              alt=""
+              alt="image"
               className="imagebox6"
             />
             <h1 className="">Dragon Foods</h1>
@@ -90,7 +93,7 @@ const Storeavl = () => {
             <motion.img
               whileHover={{ scale: 1.1 }}
               src="jgbjn,.png"
-              alt=""
+              alt="image"
               className="imagebox2"
             />
             <h1>Checf Special</h1>
@@ -114,7 +117,7 @@ const Storeavl = () => {
             <motion.img
               whileHover={{ scale: 1.1 }}
               src="optimized_large_thumb_stage.png"
-              alt=""
+              alt="image"
               className="imagebox8"
             />
             <h1>Dontstealhere</h1>
@@ -138,7 +141,7 @@ const Storeavl = () => {
             <motion.img
               whileHover={{ scale: 1.1 }}
               src="supermarket-logo-with-groceries_23-2148470294.png"
-              alt=""
+              alt="image"
               className="imagebox9"
             />
             <h1>Honeycomb Store</h1>
@@ -163,7 +166,7 @@ const Storeavl = () => {
             <motion.img
               whileHover={{ scale: 1.1 }}
               src="pngegg (1).png"
-              alt=""
+              alt="image"
               className="imagebox10"
             />
             <h1>Dontstealhere</h1>
@@ -188,7 +191,7 @@ const Storeavl = () => {
             <motion.img
               whileHover={{ scale: 1.1 }}
               src="pngegg (2).png"
-              alt=""
+              alt="image"
               className="imagebox11"
             />
             <h1>Dontstealhere</h1>
@@ -213,7 +216,7 @@ const Storeavl = () => {
             <motion.img
               whileHover={{ scale: 1.1 }}
               src="pngegg (4).png"
-              alt=""
+              alt="image"
               className="imagebox"
             />
             <h1>Dontstealhere</h1>
@@ -239,7 +242,7 @@ const Storeavl = () => {
               <motion.img
                 whileHover={{ scale: 1.1 }}
                 src="supermarket-logo-with-groceries_23-2148470294.png"
-                alt=""
+                alt="image"
                 className="imagebox"
               />
               <h1>Dontstealhere</h1>
@@ -264,7 +267,7 @@ const Storeavl = () => {
               <motion.img
                 whileHover={{ scale: 1.1 }}
                 src="ytgyjhn.png"
-                alt=""
+                alt="image"
                 className="imagebox"
               />
               <h1>Dontstealhere</h1>
