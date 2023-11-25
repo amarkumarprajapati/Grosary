@@ -1,15 +1,34 @@
 /* navbar */
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: sans-serif;
+}
 
 .container {
   position: fixed;
   width: 100%;
   display: flex;
-  background-color: rgb(19, 19, 214);
+  background-color: rgb(56, 128, 135);
   color: antiquewhite;
-  height: 10%;
-  margin-top: -25px;
+  justify-content: space-between;
   border-radius: 10px;
 }
+.container1 {
+  width: 100%;
+  display: flex;
+  background-color: rgb(56, 128, 135);
+  color: antiquewhite;
+  justify-content: space-between;
+  border-radius: 10px;
+  margin-top: -50px;
+  height: 110px;
+  position: fixed;
+}
+
 .buttonsearch {
   width: 80px;
   height: 42px;
@@ -21,8 +40,7 @@
 }
 
 .textalig {
-  margin-left: 50px;
-  margin-top: -10px;
+  margin: 30px;
 }
 .h1tag {
   font-family: sans-serif;
@@ -30,21 +48,15 @@
   cursor: pointer;
 }
 .searchbox {
-  display: flex;
-  justify-content: space-between;
-  width: 30%;
-  margin: auto;
+  margin: 30px;
 }
 
 .search {
   width: 150%;
-  margin-right: 20px;
-  height: 35px;
+  height: 48px;
   font-size: 20px;
-  border-radius: 10px;
-  border: 5px solid blue;
-  color: white;
-  background-color: blue;
+  border-radius: 5px;
+  border: none;
   transition: background-color 0.3s ease;
   outline: none;
 }
@@ -54,7 +66,10 @@
 }
 
 .image185 {
-  margin-top: 20px;
+  height: 60px;
+  position: relative;
+  height: 50%;
+  margin-right: 150px;
   cursor: pointer;
 }
 
@@ -107,14 +122,6 @@
 
 /* Home */
 
-.image15 {
-  background-image: url('12647.png');
-  background-size: cover;
-  height: 70vh;
-  width: 100%;
-
-  filter: blur(0.2px);
-}
 .conatiner2 {
   display: flex;
   justify-content: space-around;
@@ -133,8 +140,9 @@
   margin: 10px;
 }
 .h1tag1 {
-  margin-top: 80px;
-  max-width: 100%;
+  height: 35rem;
+  background-image: linear-gradient(rgb(56, 128, 135), rgb(111, 179, 184));
+  border-radius: 5px;
   text-align: center;
 }
 
@@ -178,10 +186,14 @@
   cursor: pointer;
   color: azure;
   height: 45px;
-  width: 150px;
+  width: 200px;
   margin-left: 20px;
-  border: 2px solid white;
+  border: none;
 }
+.buttonsearch1:focus {
+  border: none;
+}
+
 .sarch {
   text-decoration: none;
   color: white;
@@ -190,16 +202,18 @@
 .h1home {
   font-size: 60px;
   width: 50%;
+  padding-top: 80px;
   font-family: sans-serif;
   margin: auto;
   color: antiquewhite;
 }
 .searchbutt {
-  border-radius: 10px;
   width: 20%;
+  border: none;
   height: 40px;
   margin-top: 50px;
   font-size: 20px;
+  outline: none;
 }
 .searchbutt button {
   height: 60px;
@@ -272,7 +286,7 @@
   margin: 50px;
   width: 25%;
   height: 30vh;
-  background-color: rgba(241, 241, 242, 0.516);
+  background-color: rgb(194, 237, 206);
   border-radius: 10px;
   cursor: pointer;
 }
@@ -312,59 +326,77 @@
 .h1texttage {
   max-width: 100%;
   padding-left: 5%;
-  font-family: sans-serif;
+  font-size: 30px;
+  width: 25%;
 }
 
 .flex12 {
-  display: flex;
+  width: 100%;
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: auto;
+  text-align: center;
+  justify-content: center;
 }
 
-.image1 {
-  width: 20%;
-  margin: 50px;
-  height: 30vh;
-  background-image: url("12.jpg");
-  background-size: cover;
-  background-position: center;
-  border-radius: 20px;
-}
-.image2 {
-  width: 20%;
-  margin: 50px;
-  height: 30vh;
-  background-image: url("13.jpg");
-  background-size: cover;
-  background-position: center;
-  border-radius: 20px;
-}
-.image3 {
-  width: 20%;
-  margin: 50px;
-  height: 30vh;
-  background-image: url("14.jpg");
-  background-size: cover;
-  background-position: center;
-  border-radius: 20px;
-}
+.image1,
+.image2,
+.image3,
 .image4 {
-  width: 20%;
+  width: 30%;
   margin: 50px;
-  height: 30vh;
-  background-image: url("15.jpg");
-  background-size: cover;
-  background-position: center;
+  height: 40vh;
+  background-color: rgb(186, 223, 231);
   border-radius: 20px;
+  position: relative; /* Required for absolute positioning of text */
+  overflow: hidden; /* Hides overflowing text */
 }
-.flex123 {
-  display: flex;
-  text-align: center;
-  margin: auto;
-  padding-right: 130px;
-  justify-content: space-between;
-  font-family: sans-serif;
+
+.image1::after,
+.image2::after,
+.image3::after,
+.image4::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(56, 128, 135);
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.4s ease; /* Transition effect */
 }
-.flex123 h1 {
-  margin-left: 50px;
+
+.image1:hover::after,
+.image2:hover::after,
+.image3:hover::after,
+.image4:hover::after {
+  opacity: 1; /* Make the text visible on hover */
+}
+
+.image1 h1,
+.image2 h1,
+.image3 h1,
+.image4 h1 {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  z-index: 1;
+  font-size: 40px; /* Place text above the gradient */
+}
+.image1 p,
+.image2 p,
+.image3 p,
+.image4 p {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  z-index: 1; /* Place text above the gradient */
 }
 
 .flex1234 {
@@ -381,7 +413,7 @@
 .last_section1 {
   display: flex;
   height: 360px;
-  background-color: rgb(224, 224, 250);
+  background-color: rgb(186, 223, 231);
   margin-top: 50px;
 }
 .lstcsec {
@@ -411,10 +443,12 @@
 
 .searchbarre {
   font-family: sans-serif;
-  padding: 50px;
   display: flex;
   justify-content: space-between;
-  margin-top: 30px;
+  padding-top: 10%;
+}
+.searchbarre h1 {
+  margin: 20px;
 }
 
 .serchbox1 {
@@ -524,7 +558,7 @@
   padding-left: 80px;
 }
 .imagebox:hover {
-    filter: drop-shadow(5px 5px 5px);
+  filter: drop-shadow(5px 5px 5px);
 }
 .imagebox1 {
   width: 75%;
@@ -542,7 +576,7 @@
   padding-left: 50px;
 }
 .imagebox2:hover {
-    filter: drop-shadow(5px 5px 5px);
+  filter: drop-shadow(5px 5px 5px);
 }
 
 .imagebox3 {
@@ -551,7 +585,7 @@
   cursor: pointer;
 }
 .imagebox3:hover {
-    filter: drop-shadow(5px 5px 5px);
+  filter: drop-shadow(5px 5px 5px);
 }
 .imagebox6 {
   width: 300px;
@@ -559,21 +593,21 @@
   cursor: pointer;
 }
 .imagebox6:hover {
-    filter: drop-shadow(5px 5px 5px);
+  filter: drop-shadow(5px 5px 5px);
 }
 .imagebox8 {
   cursor: pointer;
   width: 70%;
 }
 .imagebox8:hover {
-    filter: drop-shadow(5px 5px 5px);
+  filter: drop-shadow(5px 5px 5px);
 }
 .imagebox9 {
   cursor: pointer;
   width: 70%;
 }
 .imagebox9:hover {
-    filter: drop-shadow(5px 5px 5px);
+  filter: drop-shadow(5px 5px 5px);
 }
 
 .imagebox10 {
@@ -581,24 +615,28 @@
   width: 70%;
 }
 .imagebox10:hover {
-    filter: drop-shadow(5px 5px 5px);
+  filter: drop-shadow(5px 5px 5px);
 }
 .imagebox11 {
   cursor: pointer;
   width: 75%;
 }
 .imagebox11:hover {
-    filter: drop-shadow(5px 5px 5px);
+  filter: drop-shadow(5px 5px 5px);
 }
 
 /* store1  */
 .conatiner585 {
-  width: 100%;
-  display: inline-flex;
-  justify-content: space-around;
-  padding-top: 3%;
-  background-color: rgb(228, 239, 252);
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: auto;
+  justify-content: space-between;
+  margin-top: 50px;
   font-family: sans-serif;
+}
+.marnew {
+  margin-top: 30px;
 }
 
 .image152 {
@@ -620,7 +658,14 @@
   margin-left: 150px;
 }
 .backimhe {
-  width: 25px;
+  width: 100%;
+  height: 50px;
+  background-color: rgb(56, 128, 135);
+  font-size: 20px;
+  cursor: pointer;
+  border: none;
+  color: white;
+  border-radius: 5px;
   position: relative;
   top: 5px;
 }
@@ -636,16 +681,14 @@
   background-color: transparent;
   border-radius: 20px;
   font-family: sans-serif;
-  border: 1px solid rgb(187, 224, 249);
+  border: 1px solid rgb(43, 50, 55);
   font-weight: 600;
   font-size: 20px;
   color: rgb(71, 71, 71);
 }
 
 .button_tag button:hover {
-  border: 3px solid blue;
-  color: rgb(27, 27, 27);
-  filter: drop-shadow(blue);
+  border: 1px solid rgb(147, 238, 246);
 }
 
 .imagebuttonb {
@@ -692,10 +735,10 @@
 /* vegetable box */
 
 .size11 {
-  display: inline-flex;
-  justify-content: space-around;
-  align-items: center;
-  margin-left: 150px;
+  display: flex;
+  margin: auto;
+  width: 85%;
+  padding-left: 0px;
   font-family: sans-serif;
 }
 
@@ -890,10 +933,6 @@
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
-.h1tag285 {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  color: rgb(30, 30, 172);
-}
 .flexbix1 {
   display: flex;
   width: 30%;

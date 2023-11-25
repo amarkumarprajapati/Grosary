@@ -28,28 +28,25 @@ const Navbar = () => {
   return (
     <div>
       <div className="container">
-        <div className="textalig">
-          <h1 className="h1tag" onClick={openset}>
-            ontheshelf
-          </h1>
+          <div className="textalig">
+            <h1 className="h1tag" onClick={openset}>
+              ontheshelf
+            </h1>
+          </div>
+          <div className="searchbox">
+            <input
+              type="text"
+              placeholder="Search product"
+              className="search"
+            />
+          </div>
+          <img
+            src="123.png"
+            alt="img"
+            onClick={toggleshow}
+            className="image185"></img>
+          {cartAll && <Cart />}
         </div>
-        <div className="searchbox">
-          <input type="text" placeholder="Search product" className="search" />
-        </div>
-        <img
-          src="123.png"
-          alt="img"
-          onClick={toggleshow}
-          className="image185"></img>
-        {cartAll && <Cart />}
-        <img src="12455.png" alt="img" className="image"></img>
-        <select name="user" id="">
-          <option value="">Profile</option>
-          <option value="">Setting</option>
-          <option value="">About</option>
-          <option value="">Contact US</option>
-        </select>
-      </div>
     </div>
   );
 };

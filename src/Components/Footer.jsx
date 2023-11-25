@@ -18,7 +18,7 @@ const Footer = () => {
           <h3 className="text12">Need help?</h3>
           <h3 className="">OurSupport is here for you 24/7</h3>
           <div>
-            <h1>(+123) 000 111 222 333</h1>
+            <h5>(+123) 000 111 222 333</h5>
             <a href="#" className="email">
               ontheshelf@uizard.io
             </a>

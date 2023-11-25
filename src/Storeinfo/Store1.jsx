@@ -116,7 +116,7 @@ const Store1 = () => {
   return (
     <div>
       {/* navbar */}
-      <div className="container">
+      <div className="container1">
         <div className="textalig">
           <h1 className="h1tag" onClick={openset}>
             ontheshelf
@@ -125,7 +125,6 @@ const Store1 = () => {
         <div className="searchbox">
           <input type="text" placeholder="Search product" className="search" />
         </div>
-
         {showdiv && (
           <div className="hidediv" style={{ borderRadius: "10px" }}>
             <Cart cartItems={cartItems} />
@@ -144,16 +143,17 @@ const Store1 = () => {
       <div className="conatiner585">
         <div className="text125">
           <motion.span>
-            <motion.img
+            <motion.button
               onClick={goback}
-              whileHover={{ scale: 1.5 }}
-              src="40_436-removebg-preview.png"
-              className="backimhe"
-            />
-            Back to all store
+              whileHover={{ scale: 1.2 }}
+              className="backimhe">
+              Go Back
+            </motion.button>
           </motion.span>
-          <h1>Twisted shimp</h1>
-          <p>Min 50rs . 0.50 . 20-30min.</p>
+          <div className="marnew">
+            <h1>Twisted shimp</h1>
+            <p>Min 50rs . 0.50 . 20-30min.</p>
+          </div>
         </div>
         <div>
           <img src="153.jpg" alt="" className="image152" />
@@ -169,8 +169,8 @@ const Store1 = () => {
           </button>
           <button
             style={{
-              backgroundColor: hide ? "blue" : "white",
-              border: "2px solid white",
+              backgroundColor: hide ? "rgb(56,128,135)" : "white",
+              border: "none",
               color: "white",
             }}>
             <img src="diet.png" className="imagebuttonb"></img>Food
@@ -189,7 +189,10 @@ const Store1 = () => {
       </div>
       <div className="fooditems">
         <button
-          style={{ backgroundColor: hide ? "blue" : "white", color: "white" }}
+          style={{
+            backgroundColor: hide ? "rgb(56,128,135)" : "white",
+            color: "white",
+          }}
           onClick={showallfood}>
           All food
         </button>
@@ -442,9 +445,10 @@ const Store1 = () => {
               </div>
             ))}
       </div>
-
-      <Download />
-      <Footer />
+      <div>
+        <Download />
+        <Footer />
+      </div>
     </div>
   );
 };

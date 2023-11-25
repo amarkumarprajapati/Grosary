@@ -41,9 +41,8 @@ const Home = () => {
 
   return (
     <div>
-      <div className="image15">
+      <div>
         {/* headnav */}
-
         <div className="conatiner2">
           <div className="conatiner21">
             <h1>ontheshelf</h1>
@@ -180,30 +179,30 @@ const Home = () => {
           </motion.div>
         )}
       </div>
-
-      <div>
+      {/* Four Section */}
+      <section>
         <div className="h1texttage">
           <h1>How it Works?</h1>
         </div>
         <div className="flex12">
-          <div className="image1"></div>
-          <div className="image2"></div>
-          <div className="image3"></div>
-          <div className="image4"></div>
+          <div className="image1">
+            <h1>Choose the store</h1>
+            <p>Find the favorite store in your area</p>
+          </div>
+          <div className="image2">
+            <h1>Shop</h1>
+            <p>All from the comfort your home</p>
+          </div>
+          <div className="image3">
+            <h1>Wait for delivery</h1>
+            <p>Delivery is fast and can be tracked</p>
+          </div>
+          <div className="image4">
+            <h1>Enjoy!</h1>
+            <p>Don't forget to leave a review</p>
+          </div>
         </div>
-      </div>
-      <div className="flex123">
-        <h1>1 - Choose the store</h1>
-        <h1>2 - Shop</h1>
-        <h1>3 - Wait for delivery</h1>
-        <h1>4 - Enjoy!</h1>
-      </div>
-      <div className="flex1234">
-        <p>Find the favorite store in your area</p>
-        <p>All from the comfort your home</p>
-        <p>Delivery is fast and can be tracked</p>
-        <p>Don't forget to leave a review</p>
-      </div>
+      </section>
 
       {/* last section */}
       <br />

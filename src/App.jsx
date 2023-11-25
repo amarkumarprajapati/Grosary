@@ -26,6 +26,7 @@ const App = () => {
           <Route exact path="/additems" component={<Newstore />} />
         </Routes>
       </Main>
+      
     </div>
   );
 };
